@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 
-const selectedValue = ref("default");
+const selectedValue = ref(props.lastSort);
 
 const props = defineProps({
   id: {
@@ -26,6 +26,10 @@ const props = defineProps({
   selected: {
     type: [String, Number],
     default: null,
+  },
+  lastSort: {
+    type: String,
+    required: true,
   },
 });
 const sortData = (value) => {

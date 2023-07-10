@@ -13,6 +13,7 @@ let user = ref();
 const checkedStatus = ref([]);
 const sortContainer = ref(false);
 const rowPerPage = ref(10);
+const lastSort = ref("default");
 let startValue = ref(0);
 let endValue = ref(10);
 const options = ref([
@@ -126,6 +127,7 @@ const previousPage = () => {
 };
 
 const sortData = (value) => {
+  lastSort.value = value;
   let defaultValue = [...user.value];
   if (value == "first_name") {
     defaultValue.sort((a, b) => {
@@ -186,6 +188,7 @@ watch([startValue, endValue], () => {
                   name="radioGroup"
                   :options="options"
                   @sort:data="sortData"
+                  :lastSort="lastSort"
                 />
               </div>
               <div class="mt-6">
