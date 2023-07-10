@@ -12,7 +12,7 @@ const store = useStore();
 let user = ref();
 const checkedStatus = ref([]);
 const sortContainer = ref(false);
-const rowPerPage = ref(6);
+const rowPerPage = ref(10);
 let startValue = ref(0);
 let endValue = ref(10);
 const options = ref([
@@ -270,7 +270,7 @@ watch([startValue, endValue], () => {
 @import "../../src/sass/mediaquery";
 
 .table-header {
-  @apply h-screen px-[100px] pt-[50px];
+  @apply px-[100px] pt-[50px];
 
   @include media("<=1024px") {
     @apply px-3;
