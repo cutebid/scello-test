@@ -46,7 +46,7 @@ const emit = defineEmits(["get:id"]);
       <p
         v-for="item in tabItems"
         :key="item.id"
-        :class="`px-4 py-3 text-sm ${
+        :class="`px-4 py-3 text-sm hover:cursor-pointer ${
           activeTab === item.id ? 'active-tab' : ''
         }`"
         @click="switchTab(item.id)"
